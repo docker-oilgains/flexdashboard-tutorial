@@ -14,6 +14,8 @@ RUN apt-get update -qq \
     libbz2-dev \ 
     libxml2-dev \
     libssl-dev \
+    libgit2-dev \
+    zlib1g-dev \
     libcurl4-openssl-dev \
     clang  \ 
     ccache \ 
