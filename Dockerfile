@@ -12,12 +12,16 @@ RUN apt-get update -qq \
     && apt-get -y --no-install-recommends install \ 
     liblzma-dev \ 
     libbz2-dev \ 
+    libxml2-dev \
+    libssl-dev \
+    libcurl4-openssl-dev \
     clang  \ 
     ccache \ 
     default-jdk \ 
     default-jre \ 
-    && R CMD javareconf \ 
-    && install2.r --error \ 
+    && R CMD javareconf
+
+RUN install2.r --error \ 
         ggstance ggrepel ggthemes \ 
         ###My packages are below this line 
         tidytext janitor corrr officer devtools pacman \ 
