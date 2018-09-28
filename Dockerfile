@@ -16,12 +16,14 @@ RUN apt-get update -qq \
     libssl-dev \
     libgit2-dev \
     zlib1g-dev \
-    libcurl4-openssl-dev \
     clang  \ 
     ccache \ 
     default-jdk \ 
     default-jre \ 
     && R CMD javareconf
+
+RUN  apt-get -y --no-install-recommends install \ 
+    libmagick++-dev
 
 RUN install2.r --error \ 
         ggstance ggrepel ggthemes \ 
